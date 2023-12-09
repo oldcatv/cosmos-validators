@@ -8,6 +8,7 @@
   firewalld:
     zone: public
     port: "{{ custom_port_prefix }}56/tcp"
+    immediate: true
     permanent: yes
     state: enabled
     
