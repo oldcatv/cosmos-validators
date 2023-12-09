@@ -1,0 +1,14 @@
+network: stafi
+folder: '.stafihub'
+daemon: stafihubd
+chain_id: stafihub-1
+node_version: v0.5.0
+repo: https://github.com/stafihub/stafihub
+genesis: https://raw.githubusercontent.com/stafihub/network/main/mainnets/stafihub-1/genesis.json
+seeds: 'eea58943cf8d998277124e743b304ccd21d66301@rpc.stafihub.nodestake.top:666'
+minimum_gas_price: '0.01ufis'
+custom_port_prefix: 301
+
+# [Optional] Snapshot
+snapshot_hour: 1
+snapshot_minute: 30

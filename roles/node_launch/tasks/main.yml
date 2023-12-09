@@ -15,9 +15,19 @@
     state: present
   when: seeds is defined
 
+#- name: open p2p port
+  #become: true
+  #command: 'ufw allow {{ custom_port_prefix }}56/tcp'
+  #command: 'firewall-cmd --zone=public --add-port={{ custom_port_prefix }}56/tcp --permanent ; firewall-cmd --reload'
+
 - name: open p2p port
   become: true
-  command: 'ufw allow {{ custom_port_prefix }}56/tcp'
+  firewalld:
+    zone: public
+    port: "{{ custom_port_prefix }}56/tcp"
+    permanent: yes
+    state: enabled
+
 
 - name: Create cosmovisor directories
   file:

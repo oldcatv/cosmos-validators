@@ -1,8 +1,16 @@
 ---
+#- name: open p2p port
+#  become: true
+  #command: 'ufw allow {{ custom_port_prefix }}56/tcp'
+
 - name: open p2p port
   become: true
-  command: 'ufw allow {{ custom_port_prefix }}56/tcp'
-
+  firewalld:
+    zone: public
+    port: "{{ custom_port_prefix }}56/tcp"
+    permanent: yes
+    state: enabled
+    
 - name: Create folder
   file:
     state: directory

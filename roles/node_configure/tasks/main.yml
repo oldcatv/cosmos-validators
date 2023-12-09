@@ -129,3 +129,6 @@
     regexp: '^prometheus ='
     line: 'prometheus = true'
     state: present
+  # not enable prometheus for oc node. May consider it later. so test first
+  when: type is defined and type == 'test'
+  

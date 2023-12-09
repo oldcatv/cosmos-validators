@@ -1,16 +1,6 @@
 ---
-- name: Install ufw
+- name: Install firewalld
   apt:
-    name: ufw
+    name: firewalld
     state: present
     update_cache: yes
-
-- name: Open ssh port
-  ufw:
-    rule: limit
-    port: '{{ ansible_port }}'
-    proto: tcp
-
-- name: Enable firewall
-  ufw:
-    state: enabled
