@@ -10,7 +10,6 @@ go_version: '1.20.11'
 # cosmovisor
 # upgraded from v1.0.0 to v1.5.0 but failed
 cosmovisor_version: 'v1.5.0'
-cosmovisor_version: 'v1.0.0'
 
 
 # Snapshot base URL
